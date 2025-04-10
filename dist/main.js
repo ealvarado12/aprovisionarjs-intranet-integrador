@@ -15,6 +15,12 @@ await new Promise(resolve => {
 });
 const XLSX = window.XLSX;
 
+import './lib/bootstrap-table.min.js';
+import './lib/bootstrap-table-es-ES.js'
+await import('./lib/bootstrap-table.min.js');
+const bootstrapTable = window.bootstrapTable;
+
+
 import { renderAgreementOptionsMultipleSelect2Dropdowns } from "./renders.js";
 import { onChangeAgreementsSelect2Dropdown, onChangeProductAgreementsSelect2Dropdown, onChangeUploadFileCargarInput } from "./events.js";
 import { formAprovisionarDescargarOnSubmit, formAprovisionarSubmit } from "./formSubmissions.js";
