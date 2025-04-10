@@ -114,9 +114,8 @@ export const onChangeUploadFileCargarInput = () => {
                 // la idea es inicializar eso una vez y luego controlar todo desde esa instancia
                 resetTableVistaPrevia();
                 const tipoArchivo = determinarTipoArchivo();
-                console.log(tipoArchivo);
                 const resultadoValidacion = validarColumnasXLS(columns, tipoArchivo);
-                console.log(resultadoValidacion);
+
                 if (!resultadoValidacion.valido) {
                     hideLoaderForRequest();
                     disableCargarArchivoButton();

@@ -10,8 +10,7 @@ export function determinarTipoArchivo() {
     var formData = $('#formAprovisionar').serializeObject();
     var regEx = /^GAS(\s\w*|(OLINA)$)/g;
     var producto = $('#cbProductoAprovisionarCargar option:selected').text();
-    console.log(formData.producto);
-    // ['4', '32', '43', '50']
+
     // Verifica si el producto es una tarjeta virtual
     if (tarjetaVirtual.indexOf(formData.producto) !== -1) {
         // Si es tarjeta virtual, verifica el tipo de tarjeta
@@ -102,8 +101,7 @@ const COLUMNS_TYPE_3 = [
  * @returns {Object} - Retorna un objeto con 'valido' y 'formato'.
  */
 export function validarColumnasXLS(columns, tipo) {
-    console.log(columns);
-    console.log("tipo", tipo);
+
     let requiredColumns;
     let formato;
 
