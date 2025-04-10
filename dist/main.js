@@ -1,14 +1,8 @@
 ﻿
 // Cargar Css de los plugins porque no deja hacer import de un archivo de css
-function loadCSS(href) {
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = href;
-    document.head.appendChild(link);
-}
-
-// Usa la URL completa del CDN en lugar de la ruta local
-loadCSS('https://ealvarado12.github.io/aprovisionarjs-intranet-integrador/dist/styles/select2.min.css');
+import { BASECDNPATH, loadCSS } from './utils.js';
+loadCSS(`${BASECDNPATH}/dist/styles/select2.min.css`);
+loadCSS(`${BASECDNPATH}/dist/styles/bootstrap-table.css`);
 
 // libs
 // se tiene que hacer esto porque no encontre la version de modules de xlsx.full.min.js
