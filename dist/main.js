@@ -6,7 +6,9 @@ function loadCSS(href) {
     link.href = href;
     document.head.appendChild(link);
 }
-loadCSS('./styles/select2.min.css');
+
+// Usa la URL completa del CDN en lugar de la ruta local
+loadCSS('https://ealvarado12.github.io/aprovisionarjs-intranet-integrador/dist/styles/select2.min.css');
 
 // libs
 // se tiene que hacer esto porque no encontre la version de modules de xlsx.full.min.js
