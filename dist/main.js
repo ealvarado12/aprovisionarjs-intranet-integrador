@@ -16,7 +16,8 @@ const XLSX = window.XLSX;
 import './lib/select2.min.js';
 import './lib/bootstrap-table-all.js';
 import './lib/bootstrap-table-es-ES.js'
-/////////////////////////
+///// estilos de plugins jquery ////
+import './styles/select2.min.css'
 
 
 import { renderAgreementOptionsMultipleSelect2Dropdowns } from "./renders.js";
