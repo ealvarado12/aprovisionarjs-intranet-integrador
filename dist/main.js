@@ -4,6 +4,11 @@
 // main.js necesita rutas absolutas dinámicas porque se carga desde una URL variable(dependiente del PR de Azure).
 // Los imports internos(como./ utils.js) funcionan con rutas relativas porque se resuelven desde la ubicación del módulo actual(formSubmissions.js), que ya está en la ruta correcta.
 
+// libs
+import './lib/select2.min.js';  // Select2 se auto-registra en jQuery
+import * as XLSX from './lib/xlsx.full.min.js';
+window.XLSX = XLSX;  // Opcional: exponer globalmente si es necesario
+
 import { renderAgreementOptionsMultipleSelect2Dropdowns } from "./renders.js";
 import { onChangeAgreementsSelect2Dropdown, onChangeProductAgreementsSelect2Dropdown, onChangeUploadFileCargarInput } from "./events.js";
 import { formAprovisionarDescargarOnSubmit, formAprovisionarSubmit } from "./formSubmissions.js";
