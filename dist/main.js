@@ -1,4 +1,13 @@
 ﻿
+// Cargar Css de los plugins porque no deja hacer import de un archivo de css
+function loadCSS(href) {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = href;
+    document.head.appendChild(link);
+}
+loadCSS('./styles/select2.min.css');
+
 // libs
 // se tiene que hacer esto porque no encontre la version de modules de xlsx.full.min.js
 import './lib/xlsx.full.min.js'; // Carga el script pero no captura export
@@ -16,8 +25,6 @@ const XLSX = window.XLSX;
 import './lib/select2.min.js';
 import './lib/bootstrap-table-all.js';
 import './lib/bootstrap-table-es-ES.js'
-///// estilos de plugins jquery ////
-import './styles/select2.min.css'
 
 
 import { renderAgreementOptionsMultipleSelect2Dropdowns } from "./renders.js";
