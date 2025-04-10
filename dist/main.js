@@ -4,12 +4,10 @@
 // main.js necesita rutas absolutas dinámicas porque se carga desde una URL variable(dependiente del PR de Azure).
 // Los imports internos(como./ utils.js) funcionan con rutas relativas porque se resuelven desde la ubicación del módulo actual(formSubmissions.js), que ya está en la ruta correcta.
 
-const basePath = new URL(import.meta.url).pathname.split('/Areas')[0];
-console.log(basePath);
-const { renderAgreementOptionsMultipleSelect2Dropdowns } = await import(`${basePath}/Areas/Onboarding/Scripts/Aprovisionar/renders.js`);
-const { onChangeAgreementsSelect2Dropdown, onChangeProductAgreementsSelect2Dropdown, onChangeUploadFileCargarInput } = await import(`${basePath}/Areas/Onboarding/Scripts/Aprovisionar/events.js`);
-const { formAprovisionarDescargarOnSubmit, formAprovisionarSubmit } = await import(`${basePath}/Areas/Onboarding/Scripts/Aprovisionar/formSubmissions.js`);
-const { useTableVistaPrevia, useTableResultadoAprovisionamiento } = await import(`${basePath}/Areas/Onboarding/Scripts/Aprovisionar/tableManager.js`);
+import { renderAgreementOptionsMultipleSelect2Dropdowns } from "./renders.js";
+import { onChangeAgreementsSelect2Dropdown, onChangeProductAgreementsSelect2Dropdown, onChangeUploadFileCargarInput } from "./events.js";
+import { formAprovisionarDescargarOnSubmit, formAprovisionarSubmit } from "./formSubmissions.js";
+import { useTableVistaPrevia, useTableResultadoAprovisionamiento } from "./tableManager.js";
 
 $(document).ready(async function () {
 
