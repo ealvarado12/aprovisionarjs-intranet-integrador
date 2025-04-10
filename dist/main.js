@@ -1,7 +1,6 @@
 ﻿
 // libs
 import './lib/select2.min.js';  // Select2 se auto-registra en jQuery
-
 // se tiene que hacer esto porque no encontre la version de modules de xlsx.full.min.js
 import './lib/xlsx.full.min.js'; // Carga el script pero no captura export
 await new Promise(resolve => {
@@ -15,7 +14,7 @@ await new Promise(resolve => {
 });
 const XLSX = window.XLSX;
 
-import './lib/bootstrap-table.min.js';
+import './lib/bootstrap-table-all.js';
 import './lib/bootstrap-table-es-ES.js'
 await import('./lib/bootstrap-table.min.js');
 const bootstrapTable = window.bootstrapTable;
