@@ -1,13 +1,19 @@
-﻿// Carga dinámica de módulos
-// debido a deploys en pprod por el /pull/NumPR en la ruta
-// Explicacion concreta de porque usar imports dinamicos en el main.js
-// main.js necesita rutas absolutas dinámicas porque se carga desde una URL variable(dependiente del PR de Azure).
-// Los imports internos(como./ utils.js) funcionan con rutas relativas porque se resuelven desde la ubicación del módulo actual(formSubmissions.js), que ya está en la ruta correcta.
-
+﻿
 // libs
 import './lib/select2.min.js';  // Select2 se auto-registra en jQuery
-import * as XLSX from './lib/xlsx.full.min.js';
-window.XLSX = XLSX;  // Opcional: exponer globalmente si es necesario
+
+// se tiene que hacer esto porque no encontre la version de modules de xlsx.full.min.js
+import './lib/xlsx.full.min.js'; // Carga el script pero no captura export
+await new Promise(resolve => {
+    if (window.XLSX) resolve();
+    const check = setInterval(() => {
+        if (window.XLSX) {
+            clearInterval(check);
+            resolve();
+        }
+    }, 100);
+});
+const XLSX = window.XLSX;
 
 import { renderAgreementOptionsMultipleSelect2Dropdowns } from "./renders.js";
 import { onChangeAgreementsSelect2Dropdown, onChangeProductAgreementsSelect2Dropdown, onChangeUploadFileCargarInput } from "./events.js";
