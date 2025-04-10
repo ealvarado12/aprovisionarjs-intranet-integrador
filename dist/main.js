@@ -16,7 +16,7 @@ const XLSX = window.XLSX;
 
 import './lib/bootstrap-table-all.js';
 import './lib/bootstrap-table-es-ES.js'
-await import('./lib/bootstrap-table.min.js');
+await import('./lib/bootstrap-table-all.js');
 const bootstrapTable = window.bootstrapTable;
 
 
